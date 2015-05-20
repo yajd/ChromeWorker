@@ -235,12 +235,12 @@ function xhr(aStr, aOptions={}) {
 	
 	if (aOptions.aPostData) {
 		xhr.open('POST', aStr, true);
-		xhr.channel.loadFlags |= aOptions.aLoadFlags;
+		//xhr.channel.loadFlags |= aOptions.aLoadFlags; // i dont know how to do this from ChromeWorker yet
 		xhr.responseType = aOptions.aResponseType;
 		xhr.send(aOptions.aPostData);		
 	} else {
 		xhr.open('GET', aStr, true);
-		//xhr.channel.loadFlags |= aOptions.aLoadFlags;
+		//xhr.channel.loadFlags |= aOptions.aLoadFlags; // i dont know how to do this from ChromeWorker yet
 		xhr.responseType = aOptions.aResponseType;
 		xhr.send(null);
 	}
